@@ -4,6 +4,18 @@
 #include <string>
 using namespace std;
 
+/** huffman pseudo: 
+    n = |C|
+    Q = C
+    for i = 1 to n - 1
+        give a new node z
+        z.left = x = extract-min(Q)
+        z.right = y = extract-min(Q)
+        z.freq = x.freq + y.freg
+        insert(Q,z)
+    return extract-min(Q)
+**/
+    
 class Node {
 public:
     char data;
