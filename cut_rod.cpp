@@ -13,6 +13,18 @@ int cutRod(int p[], int n){
     return q;
 }
 
+/**
+    pseudo: 
+    let r[0...n] = new array 
+    r[0] = 0
+    for j = 1 to n:
+        q = -inf
+        for i = 1 to j:
+            q = max(q, p[i] + r[j - i])
+        r[j] = q
+    return r[n]
+**/
+
 int bottomUpCutRod(int p[], int n, int*& s) {
     int* r = new int[n + 1];
     r[0] = 0;
