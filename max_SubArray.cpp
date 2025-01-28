@@ -10,6 +10,24 @@ int max(int a, int b, int c){
     return max(max(a,b), c);
 }
 
+/** 
+    left-sum = =inf
+    sum = 0
+    for i = mid to low
+        sum = sum + A[i]
+        if sum > left-sum
+            left-sum = sum
+            max-left = i
+    right-sum = -inf
+    sum = 0
+    for j = mid + 1 to high
+        sum = sum + A[j]
+        if sum > right-sum
+            right-sum = sum
+            max-sum = j
+    return (max-left, max-right, left-sum + right-sum)
+**/
+
 int maxCrossingSum(int A[], int low, int middle, int high){
     int sum = 0;
     int left_sum = INT_MIN;
